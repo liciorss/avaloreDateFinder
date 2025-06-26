@@ -192,11 +192,11 @@ def getDate(toggle):
     else:
         finishW = "th"
     
-    if (month == 0):
+    if (month == 10):
         finishM = "st"
-    elif (month == 1):
+    elif (month == 11):
         finishM = "nd"
-    elif (month == 2):
+    elif (month == 12):
         finishM = "rd"
     else:
         finishM = "th"
@@ -229,4 +229,4 @@ async def on_message(message):
     elif message.content.startswith('$date'):
         await message.channel.send(getDate(False))
 
-client.run('')
+client.run('MTM4NzYzODczMTk5Mjg2MjgzMg.GafDod.3wXn4_dxyTCdlTdlvE-WiLo7tvRlGIdGgnPraQ')
