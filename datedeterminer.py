@@ -229,4 +229,4 @@ async def on_message(message):
     elif message.content.startswith('$date'):
         await message.channel.send(getDate(False))
 
-client.run('token would go here, but it is hidden for safety :D')
+client.run('token would go here, but it is hidden for safety')
