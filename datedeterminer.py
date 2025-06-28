@@ -66,7 +66,7 @@ def getDate(toggle):
     # 
     # 364 days a year, 86400 seconds/day, 31449600 seconds/year IC.
     knownDate = 1750478400
-    realDate = int(time.time())
+    realDate = int(time.time()) - 7200
     firstYearEnd = 24191999
     yearLength = 31449600
     yearCurrent = 1641
@@ -224,9 +224,11 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$date -dmy'):
+    if message.content.startswith('$date -f'):
         await message.channel.send(getDate(True))
     elif message.content.startswith('$date'):
         await message.channel.send(getDate(False))
+    elif message.content.startswith('$help'):
+        await message.channel.send('Usage: \n$date to get the current date\n$date -f for a more concise dd/mm/yyyy format')
 
-client.run('token would go here, but it is hidden for safety')
+client.run()
